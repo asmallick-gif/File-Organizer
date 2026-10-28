@@ -1,101 +1,103 @@
 # 🗂️ File Organizer with GUI (Tkinter)
 
-A simple yet powerful **File Organizer** built using **Python** and **Tkinter**. Automatically organizes files into folders by type (Images, Documents, Videos, etc.) and supports **undo** and **scheduled auto-organizing**.
+A simple yet powerful file organizer built with Python and Tkinter. It automatically sorts files into folders by type (images, documents, videos, archives, music, and more) and includes undo and scheduling support.
 
 ---
 
-## 📦 Features
+## Features
 
-- Organizes files into folders based on extensions
-- Undo last organize operation
-- Schedule auto-organization (every N minutes)
-- User-friendly GUI
-- Logging of all operations
-- Supports a wide variety of file types
+- Organize files into folders based on file extension
+- Undo the most recent organization action
+- Schedule automatic organization at a chosen interval
+- User-friendly GUI interface
+- Log file operations
+- Support for a wide range of file types
 
 ---
 
-## 🧰 Requirements
+## Requirements
 
 - Python 3.6 or higher
 
-### Install Dependencies (Only Standard Library used)
-No external packages needed. Just ensure Python is installed.
+No external libraries are required. The project uses the Python standard library only.
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
-### 1. Save the Code
+### 1. Save the script
 
-Save the provided Python code into a file named:
+Save the Python file as:
+
+```bash
 file_organizer.py
+```
 
-2. Run the Application
-Open terminal or command prompt and run:
+### 2. Run the application
 
-bash
-Copy
-Edit
+Open a terminal or command prompt and run:
+
+```bash
 python file_organizer.py
-This will launch a GUI window.
+```
 
-🖥️ How to Use
-🗃️ Organize Files
-Click Browse to select the folder you want to organize.
+This will launch the GUI window.
 
-Click Organize Files.
+---
 
-Files will be moved into folders like:
+## How to Use
 
-Images/
+### Organize Files
 
-Documents/
+1. Click `Browse`.
+2. Select the folder you want to organize.
+3. Click `Organize Files`.
 
-Videos/
+The application will move files into folders such as:
 
-Archives/
+- `Images/`
+- `Documents/`
+- `Videos/`
+- `Archives/`
+- `Music/`
+- `Others/`
 
-Music/
+A success message appears when the process finishes.
 
-Others/
+### Undo Organize
 
-A success message will pop up after organizing.
-
-↩️ Undo Organize
 If you made a mistake:
 
-Click Undo Last Organize.
+1. Click `Undo Last Organize`.
+2. Files are moved back to their original locations.
 
-Files will be moved back to their original locations.
+This only works for the most recent organization operation.
 
-Works only for the last operation.
+### Schedule Automatic Organizing
 
-⏱️ Schedule Automatic Organizing
-Enter the interval (in minutes) in the input field.
+1. Enter the interval in minutes.
+2. Click `Start Scheduler`.
+3. The selected folder is organized automatically at the chosen interval.
 
-Click Start Scheduler.
+To stop the scheduler, click `Stop Scheduler`.
 
-The selected folder will be organized automatically at the given interval.
+---
 
-Click Stop Scheduler to cancel.
+## Example
 
-📁 Example
 Suppose your folder contains:
 
-python
-Copy
-Edit
+```text
 project/
 ├── image1.jpg
 ├── doc1.pdf
 ├── song1.mp3
 ├── archive1.zip
+```
+
 After organizing, it becomes:
 
-python
-Copy
-Edit
+```text
 project/
 ├── Images/
 │   └── image1.jpg
@@ -105,50 +107,70 @@ project/
 │   └── song1.mp3
 ├── Archives/
 │   └── archive1.zip
-📝 Logs
+```
+
+---
+
+## Logs
+
 All file moves and scheduling events are logged to:
 
-lua
-Copy
-Edit
+```text
 file_organizer.log
-🔄 Undo Tracking
-Moves are saved in:
+```
 
-pgsql
-Copy
-Edit
+## Undo Tracking
+
+The application stores move records in:
+
+```text
 undo_record.json
-Used for the Undo function. Gets deleted after undo is complete.
+```
 
-📦 Supported File Types
-Category	Extensions
-Images	.jpg, .jpeg, .png, .gif, .bmp, .tiff
-Documents	.pdf, .doc, .docx, .txt, .xls, .xlsx, .ppt, .pptx
-Archives	.zip, .rar, .7z, .tar, .gz
-Videos	.mp4, .mov, .avi, .mkv
-Music	.mp3, .wav, .aac, .flac
-Others	Everything else
+This file is used by the undo feature and is removed after the undo operation is complete.
 
-❗ Notes
-Organizing and undo operations only affect files (not subfolders).
+---
 
-Undo only works for the most recent operation.
+## Supported File Types
 
-Don't delete undo_record.json if you plan to undo.
+| Category | Extensions |
+|----------|------------|
+| Images | `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.tiff` |
+| Documents | `.pdf`, `.doc`, `.docx`, `.txt`, `.xls`, `.xlsx`, `.ppt`, `.pptx` |
+| Archives | `.zip`, `.rar`, `.7z`, `.tar`, `.gz` |
+| Videos | `.mp4`, `.mov`, `.avi`, `.mkv` |
+| Music | `.mp3`, `.wav`, `.aac`, `.flac` |
+| Others | Everything else |
 
-📤 Deployment
-You can optionally convert it to a standalone app using PyInstaller:
+---
 
-bash
-Copy
-Edit
+## Notes
+
+- Organizing and undo operations affect only files, not subfolders.
+- Undo works only for the most recent action.
+- Do not delete `undo_record.json` unless you are sure you no longer need to undo.
+
+---
+
+## Deployment
+
+You can optionally convert the app to a standalone executable with PyInstaller:
+
+```bash
 pip install pyinstaller
 pyinstaller --noconsole --onefile file_organizer.py
-This will generate an executable in the dist/ folder.
+```
 
-📄 License
+This generates an executable in the `dist/` folder.
+
+---
+
+## License
+
 MIT License. Free to use, modify, and distribute.
 
-🙋‍♂️ Author
+---
+
+## Author
+
 Made with ❤️ using Python and Tkinter.
