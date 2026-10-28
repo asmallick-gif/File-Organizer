@@ -29,9 +29,8 @@ No external packages needed. Just ensure Python is installed.
 ### 1. Save the Code
 
 Save the provided Python code into a file named:
-
-```bash
 file_organizer.py
+
 2. Run the Application
 Open terminal or command prompt and run:
 
